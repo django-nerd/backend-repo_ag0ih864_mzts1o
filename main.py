@@ -73,31 +73,45 @@ def test_database():
     return response
 
 
-# Inlined minified libraries for single-file output (jQuery 3.6.0 and turn.js 4.1)
-# Source: https://code.jquery.com/jquery-3.6.0.min.js and turnjs (MIT for jQuery; turn.js GPL/MIT like)
-# Included here solely to embed into the generated HTML file so it remains single-file.
-JQUERY_MIN = """
-/*! jQuery v3.6.0 | (c) OpenJS Foundation and other contributors | jquery.org/license */
-!function(a,b){"use strict";"object"==typeof module&&"object"==typeof module.exports?module.exports=a.document?b(a,!0):function(a){if(!a.document)throw new Error("jQuery requires a window with a document");return b(a)}:b(a)}("undefined"!=typeof window?window:this,function(C,a){"use strict";var e=[],r=Object.getPrototypeOf,s=e.slice,g=e.flat?function(a){return e.flat.call(a)}:function(a){return e.concat.apply([],a)},u=e.push,i=e.indexOf,n={},o=n.toString,v=n.hasOwnProperty,l=v.toString,f=l.call(Object),y={},m=function(a){return"function"==typeof a&&"number"!=typeof a.nodeType},x=function(a){return null!=a&&a===a.window},w=C.document,c={type:!0,src:!0,nonce:!0,noModule:!0};function b(a,b,c){var d,e,f=(c=c||w).createElement("script");if(f.text=a,b)for(d in c)f.setAttribute(d,b[d]);e=c.getElementsByTagName("script")[0]||c.head||c.documentElement,e.parentNode.insertBefore(f,e),e.parentNode.removeChild(f)}function T(a){return null==a?a+"":"object"==typeof a||"function"==typeof a?n[o.call(a)]||"object":typeof a}var t="3.6.0",E=function(a,b){return new E.fn.init(a,b)};E.fn=E.prototype={jquery:t,constructor:E,length:0,toArray:function(){return s.call(this)},get:function(a){return null==a?s.call(this):a<0?this[a+this.length]:this[a]},pushStack:function(a){var b=E.merge(this.constructor(),a);return b.prevObject=this,b},each:function(a){return E.each(this,a)},map:function(a){return this.pushStack(E.map(this,function(b,c){return a.call(b,c,b)}))},slice:function(){return this.pushStack(s.apply(this,arguments))},first:function(){return this.eq(0)},last:function(){return this.eq(-1)},even:function(){return this.pushStack(E.grep(this,function(a,b){return(b+1)%2}))},odd:function(){return this.pushStack(E.grep(this,function(a,b){return b%2}))},eq:function(a){var b=this.length,c=+a+(a<0?b:0);return this.pushStack(c>=0&&c<b?[this[c]]:[])},end:function(){return this.prevObject||this.constructor()},push:u,sort=e.sort,splice=e.splice},E.extend=E.fn.extend=function(){var a,b,c,d,e,f,g=arguments[0]||{},h=1,i=arguments.length,j=!1;for("boolean"==typeof g&&(j=g,g=arguments[h]||{},h++),"object"==typeof g||m(g)||(g={}),h===i&&(g=this,h--);h<i;h++)if(null!=(a=arguments[h]))for(b in a)d=g[b],g!==(c=a[b])&&(j&&c&&(E.isPlainObject(c)||(e=Array.isArray(c)))?(e?(e=!1,f=d&&Array.isArray(d)?d:[]):f=d&&E.isPlainObject(d)?d:{},g[b]=E.extend(j,f,c)):void 0!==c&&(g[b]=c));return g},E.extend({expando:"jQuery"+(t+Math.random()).replace(/\D/g,""),isReady:!0,error:function(a){throw new Error(a)},noop:function(){},isPlainObject:function(a){var b,c;return!(!a||"[object Object]"!==o.call(a))&&(!(b=r(a))||"function"==typeof(c=v.call(b,"constructor")&&b.constructor)&&l.call(c)===f)},isEmptyObject:function(a){var b;for(b in a)return!1;return!0},globalEval:function(a,b,c){b&&b.nodeType&&(c=b.ownerDocument||b,b=b.textContent),b=b||w,b=b.createElement("script"),c?b.text=a:b.appendChild(b.createTextNode(a)),c?b=c;b.type="module";w.head.appendChild(b).parentNode.removeChild(b)},each:function(a,b){var c,d=0;if(A(a)){for(c=a.length;d<c;d++)if(!1===b.call(a[d],d,a[d]))break}else for(d in a)if(!1===b.call(a[d],d,a[d]))break;return a},makeArray:function(a,b){var c=b||[];return null!=a&&(A(Object(a))?E.merge(c,"string"==typeof a?[a]:a):u.call(c,a)),c},inArray:function(a,b,c){return null==b?-1:i.call(b,a,c)},merge:function(a,b){for(var c=+b.length,d=0,e=a.length;d<c;d++)a[e++]=b[d];return a.length=e,a},grep:function(a,b,c){for(var d=[],e=0,f=a.length,g=!c;e<f;e++)!b(a[e],e)!==g&&d.push(a[e]);return d},map:function(a,b,c){var d,f,e=0,h=[];if(A(a))for(d=a.length;e<d;e++)f=b(a[e],e,c),null!=f&&h.push(f);else for(e in a)f=b(a[e],e,c),null!=f&&h.push(f);return g(h)},guid:1,support:{} });function A(a){var b=!!a&&"length"in a&&a.length,c=T(a);return!m(a)&&!x(a)&&("array"===c||0===b||"number"==typeof b&&b>0&&b-1 in a)}var N=function(a){return a.nodeType===1||a.nodeType===9||!+a.nodeType};
-E.fn.init=function(a,b){var c,d;if(!a)return this;if("string"==typeof a){if(!(c="<"===a[0]&&">"===a[a.length-1]&&a.length>=3?[null,a,null]:/^#(?:[\w-]|\\.|[\u00A0-\uFFFF])+$/).test(a)||!b)return(b||w).querySelectorAll(a);if((d=(b||w).getElementById(a.slice(1)))&&(this[0]=d,this.length=1),this)return this}else{if(m(a))return void 0!==a.jquery?(this[0]=a[0],this.length=1,this):void 0!==a.nodeType&&((this[0]=a,this.length=1),this);if(A(a))return E.merge(this,a)}return this};
-E.fn.init.prototype=E.fn;var S=E(C);
-/* trimmed further for brevity in this environment */
-""".strip()
+# Minimal jQuery-compatible shim sufficient for our subset usage
+# Supports: $(selector), $(fn) ready, $.extend, $.fn plugin, .children(sel), .hide/.show, .eq, .on,
+# .width/.height, .css, .addClass/.removeClass, .offset, $('<div>').appendTo, $(window)
+JQUERY_MIN = (
+    "!function(global){\n"
+    "  function $(arg){\n"
+    "    if(typeof arg==='function'){ if(document.readyState!=='loading') arg(); else document.addEventListener('DOMContentLoaded', arg); return $; }\n"
+    "    if(arg===global) return new Wrapper([global]);\n"
+    "    if(arg instanceof Wrapper) return arg;\n"
+    "    if(typeof arg==='string'){ if(arg.trim().startsWith('<')){ var tmp=document.createElement('div'); tmp.innerHTML=arg.trim(); return new Wrapper([tmp.firstElementChild]); } return new Wrapper(Array.from(document.querySelectorAll(arg))); }\n"
+    "    if(arg && (arg.nodeType===1||arg===document)) return new Wrapper([arg]);\n"
+    "    if(Array.isArray(arg)) return new Wrapper(arg);\n"
+    "    return new Wrapper([]);\n"
+    "  }\n"
+    "  function Wrapper(nodes){ this.nodes = nodes; }\n"
+    "  $.fn = Wrapper.prototype;\n"
+    "  $.extend = function(target){ for(var i=1;i<arguments.length;i++){ var src=arguments[i]||{}; for(var k in src){ if(Object.prototype.hasOwnProperty.call(src,k)) target[k]=src[k]; } } return target; };\n"
+    "  Wrapper.prototype.each = function(cb){ this.nodes.forEach(function(n,i){ cb.call(n,i,n); }); return this; };\n"
+    "  Wrapper.prototype.children = function(sel){ var out=[]; this.each(function(){ out = out.concat(Array.from(this.children)); }); if(sel){ out=out.filter(function(n){ return n.matches(sel); }); } return new Wrapper(out); };\n"
+    "  Wrapper.prototype.hide = function(){ return this.css({display:'none'}); };\n"
+    "  Wrapper.prototype.show = function(){ return this.css({display:''}); };\n"
+    "  Wrapper.prototype.eq = function(i){ return new Wrapper([this.nodes[i]].filter(Boolean)); };\n"
+    "  Wrapper.prototype.on = function(ev, handler){ var evs=ev.split(/\s+/); return this.each(function(){ evs.forEach(function(e){ this.addEventListener(e, handler, {passive:false}); }, this); }); };\n"
+    "  Wrapper.prototype.width = function(){ var n=this.nodes[0]; return n===global ? global.innerWidth : (n.getBoundingClientRect().width); };\n"
+    "  Wrapper.prototype.height = function(){ var n=this.nodes[0]; return n===global ? global.innerHeight : (n.getBoundingClientRect().height); };\n"
+    "  Wrapper.prototype.css = function(obj){ return this.each(function(){ for(var k in obj){ this.style[k.replace(/-([a-z])/g,function(_,c){return c.toUpperCase();})]=obj[k]; } }); };\n"
+    "  Wrapper.prototype.addClass = function(c){ return this.each(function(){ this.classList.add(c); }); };\n"
+    "  Wrapper.prototype.removeClass = function(c){ return this.each(function(){ this.classList.remove(c); }); };\n"
+    "  Wrapper.prototype.offset = function(){ var n=this.nodes[0]; var r=n.getBoundingClientRect(); return {top:r.top+global.pageYOffset,left:r.left+global.pageXOffset}; };\n"
+    "  Wrapper.prototype.appendTo = function(sel){ var parent = (typeof sel==='string')? document.querySelector(sel) : (sel instanceof Wrapper? sel.nodes[0] : sel); return this.each(function(){ parent && parent.appendChild(this); }); };\n"
+    "  global.jQuery = global.$ = $;\n"
+    "}(window);\n"
+)
 
-# Minimal turn.js build (core for page turning). For brevity and payload limits, this is a compacted subset
-# sufficient for core single-page flip with touch support. In real-world, use the official minified build.
+# Minimal turn.js build (subset) that depends on the shimmed jQuery interface
 TURNJS_MIN = """
 /* turn.js 4.1 - subset for single display */
 (function($){
   'use strict';
-  var has3d, vendor='';
-  (function(){
-    var el = document.createElement('div');
-    var transforms = ['transform','WebkitTransform','MozTransform','OTransform','msTransform'];
-    for (var i=0; i<transforms.length; i++) if (el.style[transforms[i]]!==undefined){ vendor=transforms[i].replace('Transform',''); has3d=true; break; }
-  })();
-  function translate(x,y){ return 'translate(' + x + 'px,' + y + 'px)'; }
-  function rotate(a){ return ' rotate(' + a + 'deg)'; }
   $.fn.turn = function(opts){
     var settings = $.extend({width:320,height:480,display:'single',elevation:50,gradients:true,autoCenter:true}, opts);
     return this.each(function(){
@@ -105,16 +119,13 @@ TURNJS_MIN = """
       $wrap.addClass('turnjs');
       var $pages = $wrap.children('.page');
       var current = 0, dragging=false, startX=0;
-      function setSize(){ var r = Math.min(window.innerWidth, settings.width); var h = r*settings.height/settings.width; $wrap.css({width:r+'px', height:h+'px'}); }
-      function show(i){ i=Math.max(0, Math.min($pages.length-1, i)); $pages.hide().eq(i).show(); current=i; }
-      function startDrag(e){ dragging=true; startX = (e.originalEvent.touches? e.originalEvent.touches[0].clientX : e.clientX); $wrap.addClass('dragging'); }
-      function moveDrag(e){ if(!dragging) return; var x = (e.originalEvent.touches? e.originalEvent.touches[0].clientX : e.clientX); var dx=x-startX; var progress=Math.max(-1,Math.min(1,dx/($wrap.width()*0.8))); var deg = -progress*25; var sh = Math.abs(progress)*0.6; $pages.eq(current).css({boxShadow:'rgba(0,0,0,'+sh+') 0px 8px 24px', transform:'perspective(1000px)'+rotate(deg)}); }
-      function endDrag(e){ if(!dragging) return; var x = (e.changedTouches? e.changedTouches[0].clientX : (e.originalEvent&&e.originalEvent.changedTouches? e.originalEvent.changedTouches[0].clientX : (e.clientX||startX))); var dx=x-startX; if(Math.abs(dx) > $wrap.width()*0.25){ if(dx<0 && current<$pages.length-1) show(current+1); else if(dx>0 && current>0) show(current-1); }
+      function setSize(){ var vw = $(window).width(); var r = Math.min(vw, settings.width); var h = r*settings.height/settings.width; $wrap.css({width:r+'px', height:h+'px'}); }
+      function show(i){ i=Math.max(0, Math.min($pages.nodes.length-1, i)); $pages.hide().eq(i).show(); current=i; }
+      function startDrag(e){ dragging=true; startX = (e.touches? e.touches[0].clientX : (e.clientX|| (e.changedTouches? e.changedTouches[0].clientX:0))); $wrap.addClass('dragging'); e.preventDefault && e.preventDefault(); }
+      function moveDrag(e){ if(!dragging) return; var x = (e.touches? e.touches[0].clientX : (e.clientX|| (e.changedTouches? e.changedTouches[0].clientX:startX))); var dx=x-startX; var progress=Math.max(-1,Math.min(1,dx/($wrap.width()*0.8))); var deg = -progress*25; var sh = Math.abs(progress)*0.6; $pages.eq(current).css({boxShadow:'rgba(0,0,0,'+sh+') 0px 8px 24px', transform:'perspective(1000px) rotate('+deg+'deg)'}); }
+      function endDrag(e){ if(!dragging) return; var x = (e.changedTouches? e.changedTouches[0].clientX : (e.clientX||startX)); var dx=x-startX; if(Math.abs(dx) > $wrap.width()*0.25){ if(dx<0 && current<$pages.nodes.length-1) show(current+1); else if(dx>0 && current>0) show(current-1); }
         $pages.eq(current).css({boxShadow:'', transform:''}); dragging=false; $wrap.removeClass('dragging'); }
-      $wrap.on('touchstart mousedown', function(e){
-        var edgeZone = $wrap.width()*0.15; var cx = (e.originalEvent.touches? e.originalEvent.touches[0].clientX : e.clientX) - $wrap.offset().left;
-        if(cx < edgeZone || cx > $wrap.width()-edgeZone) startDrag(e);
-      });
+      $wrap.on('touchstart mousedown', function(e){ var ev = e.touches? e.touches[0] : e; var edgeZone = $wrap.width()*0.15; var cx = ev.clientX - $wrap.offset().left; if(cx < edgeZone || cx > $wrap.width()-edgeZone) startDrag(e); });
       $(window).on('resize', setSize);
       $wrap.on('touchmove mousemove', moveDrag);
       $wrap.on('touchend mouseup mouseleave', endDrag);
@@ -205,8 +216,8 @@ def _build_single_file_html(image_data_urls: List[str], password: str) -> str:
           autoCenter: true
         });
         // Add visible edges
-        $('<div class="edge-indicator left"></div>').appendTo('#flipbook');
-        $('<div class="edge-indicator right"></div>').appendTo('#flipbook');
+        $('<div class=\"edge-indicator left\"></div>').appendTo('#flipbook');
+        $('<div class=\"edge-indicator right\"></div>').appendTo('#flipbook');
       });
     """
 
